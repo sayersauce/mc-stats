@@ -1,0 +1,5 @@
+{
+    "host" : "",
+    "webhook-url" : "",
+    "csv-file" : "playercount.csv"
+}

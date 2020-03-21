@@ -102,7 +102,7 @@ if __name__ == "__main__":
             if query.players.online != previous_query.players.online:
                 send_discord_webhook(config["webhook-url"], "", query)
             previous_query = query
-            time.sleep(5)
+            time.sleep(600)
 
         # Send webhook with playercount graph. Save playercount data.
         query = query_minecraft_server(config["host"])
@@ -110,5 +110,5 @@ if __name__ == "__main__":
         add_csv_line(config["csv-file"], f"{date.day}/{date.month}/{date.year}", date.hour, query.players.online)
         create_graph(load_csv(config["csv-file"]))
         send_discord_webhook(config["webhook-url"], "plot.png", query)
-        time.sleep(20)
+        time.sleep(600)
 
